@@ -13,14 +13,14 @@
     
     // you (or your client's) merchant credentials.
     // grab a test account from us for development!
-    $merchant_id = "417227771521";
-    $merchant_key = "I5T2R2K6V1Q3";
+    $merchant_id = $sharedCredentials["MID"];
+    $merchant_key = $sharedCredentials["MKEY"];
 
     // configuring the transaction
     $amount = "25.00";
-    $transaction_type = "11"; // 11 -> Sale
+    $transaction_type = $transactionTypes["UI"]["Sale"];
 
-    // some arbitrary values for the samaple
+    // some arbitrary values for this demo
     $order_number = "Invoice " . rand(0, 1000);
     $transaction_id = uniqid();
 
@@ -64,9 +64,7 @@
             </PaymentType>
         </Payments>
     </Request_v1>";
-    
 
-    // these methods are defined in shared.php
     $tokenizedRequest = getEnvelope($xmlRequest);
     $redirectUrl = getRedirectUrl();
 
@@ -74,7 +72,7 @@
 
 <html>
     <form method="POST" action="https://www.sageexchange.com/sevd/frmPayment.aspx">
-        <input type="hidden" name="request" value="<?php echo htmlspecialchars($tokenizedRequest); ?>" />
+        <input type="hidden" name="request" value="<?php echo htmlspecialchars($tokenizedRequest) ?>" />
         <input type="hidden" name="redirect_url" value="<?php echo "https://$redirectUrl" ?>" />
         <input type="hidden" name="consumer_initiated" value="true" />
         <input type="submit" value="Submit Payment" />
