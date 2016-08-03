@@ -10,28 +10,16 @@
         
         $url = "https://www.sageexchange.com/sevd/frmEnvelope.aspx";
         $body = "request=" . urlencode($xmlRequest);
-        
-        $config = [
-            "http" => [
-                "header" => [
-                    "content-type: application/x-www-form-urlencoded",
-                    "accept: application/xml"
-                ],
-                "method" => "POST",
-                "content" => $body
-            ]
-        ];
-        
-        $context = stream_context_create($config);
-        $result = file_get_contents($url, false, $context);
-        
-        return $result;
+        return makePostRequest($body, $url);
     }
     
     function openEnvelope($xmlResponse){
         $url = "https://www.sageexchange.com/sevd/frmOpenEnvelope.aspx";
-        //$url = "http://requestb.in/rbzg3yrb";
         $body = "request=" . urlencode($xmlResponse);
+        return makePostRequest($body, $url);
+    }
+    
+    function makePostRequest($body, $url){
         
         $config = [
             "http" => [
