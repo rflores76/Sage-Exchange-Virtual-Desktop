@@ -37,7 +37,7 @@
         </Payments>
     </Request_v1>";
 
-    // since no user interaction is required, a void request can be done
+    // since no user interaction is required, this request can be done
     // directly from the server. and since it's a server-side request,
     // there's no need to tokenize the xml.
     $url = "https://www.sageexchange.com/sevd/frmPayment.aspx";
