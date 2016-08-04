@@ -1,8 +1,8 @@
 <?php
-
-    $reference = $_REQUEST['ref'];
     
     require('shared.php');
+    
+    $reference = $_REQUEST['reference'];
     
     // you (or your client's) merchant credentials.
     // grab a test account from us for development!
