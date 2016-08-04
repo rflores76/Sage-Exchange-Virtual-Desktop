@@ -66,7 +66,7 @@
     </Request_v1>";
 
     $tokenizedRequest = getEnvelope($xmlRequest);
-    $redirectUrl = getRedirectUrl();
+    $redirectUrl = getRedirectUrl("response.php");
 
 ?>
 

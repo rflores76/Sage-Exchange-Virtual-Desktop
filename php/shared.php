@@ -74,14 +74,14 @@
         return $result;
     }
 
-    function getRedirectUrl(){
+    function getRedirectUrl($responsePage){
         
         // this is a little more complicated than it needs to be... we need
         // to send an absolute URL to SEVD, but this sample code may be run
         // in a variety of environments - so I can't just hard-code a value.
         
         $currentUrl = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        $redirectUrl = str_replace(basename($currentUrl), "response.php", $currentUrl);
+        $redirectUrl = str_replace(basename($currentUrl), $responsePage, $currentUrl);
         
         return $redirectUrl;
     }

@@ -1,6 +1,6 @@
 <?php
 
-    $reference = $_REQUEST['ref'];
+    $reference = $_REQUEST['reference'];
     
     require('shared.php');
     

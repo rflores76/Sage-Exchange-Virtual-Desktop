@@ -23,12 +23,12 @@
 <html>
     
     <form action="void.php">
-        <input type="hidden" name="ref" value="<?php echo $reference ?>" />
+        <input type="hidden" name="reference" value="<?php echo $reference ?>" />
         <input type="submit" value="VOID this transaction" />
     </form>
     
     <form action="refund.php">
-        <input type="hidden" name="ref" value="<?php echo $reference ?>" />
+        <input type="hidden" name="reference" value="<?php echo $reference ?>" />
         <input type="submit" value="REFUND this transaction" />
     </form>
     
