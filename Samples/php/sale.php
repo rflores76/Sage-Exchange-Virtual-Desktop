@@ -1,14 +1,5 @@
 <?php
     
-    // ===============================
-    // SAMPLE SEVD REQUEST - PHP
-    // Majid Razvi
-    // Software Engineer
-    // Sage Payment Solutions
-    // August 3rd, 2016
-    // Standard MIT License.
-    // ===============================
-
     require('shared.php');
     
     // you (or your client's) merchant credentials.
